@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 
-import Footer from '@/components/Footer'
-import Menu from '@/components/Menu'
-import Navbar from '@/components/Navbar'
+import Footer from 'components/Footer'
+import Menu from 'components/Menu'
+import Navbar from 'components/Navbar'
 
 export default function Home() {
   return (
@@ -18,7 +18,9 @@ export default function Home() {
 
       <Navbar />
 
-      <main>
+      <main className='
+    light:bg-zinc-900
+    dark:bg-red-50'>
         <Menu />
       </main>
 
