@@ -1,19 +1,19 @@
 import React from "react";
 import Image from 'next/image'
+import logoImg from '../public/logo.png'
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex items-center justify-between py-5 px-10
-    light:bg-red-50
-    dark:bg-zinc-900">
-      <div className="flex gap-2 items-center">
-        <Image src='/logo.png' alt='Logo do Cardápio COTEC'
-        width={50} height={50}/>
+    <nav className="w-full flex items-center justify-between py-4 px-10
+    bg-black">
+      <div className="flex gap-3 items-center">
+        <Image src={logoImg} alt='Logo do Cardápio COTEC'
+        width={65} height={65}/>
 
-        <h1>Cardápio Cotec</h1>
+        <h1 className="text-3xl font-bold text-primary">Cardápio Cotec</h1>
       </div>
-      <ul>
-        <li>Menu</li>
+      <ul className="text-2xl [&>*]:cursor-pointer">
+        <li>Carrinho</li>
       </ul>
     </nav>
   );
