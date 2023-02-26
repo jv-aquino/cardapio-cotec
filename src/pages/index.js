@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 
 import Footer from 'components/Footer'
@@ -6,7 +7,24 @@ import Navbar from 'components/Navbar'
 
 import { supabase } from "lib/supabaseClient";
 
+async function getProdutos() {
+  let { data: produto, error } = await supabase
+  .from('produto')
+  .select('*');
+  
+  return produto;
+}
+
 export default function Home() {
+  let [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    getProdutos().then((data) => {
+      setProdutos(data)
+    })
+  }, [])
+  
+
   return (
     <>
       <Head>
@@ -22,7 +40,7 @@ export default function Home() {
       <Navbar />
 
       <main className='pt-4'>
-        <Menu items={''} />
+        <Menu items={produtos} />
       </main>
 
       <Footer />

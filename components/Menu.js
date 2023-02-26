@@ -7,12 +7,11 @@ export default function Menu({items}) {
       <h2 className="text-5xl text-black font-bold text-center">
         Menu
       </h2>
-      {
-        /* items.map(item => {
+      {/* 
+       items.map(item => {
           return (
             <div key={uuidv4()}>
-              <h3>{item.name}</h3>
-              <Image src={item.image} alt={"Imagem do " + item.name} width={100} height={100}
+              <h3>{item.nome}</h3>
               <p>$ {item.preco}</p>
             </div>
           )
