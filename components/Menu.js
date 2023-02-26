@@ -12,6 +12,8 @@ export default function Menu({items}) {
           return (
             <div key={uuidv4()}>
               <h3>{item.name}</h3>
+              <Image src={item.image} alt={"Imagem do " + item.name} width={100} height={100}
+              <p>$ {item.preco}</p>
             </div>
           )
         }) */
