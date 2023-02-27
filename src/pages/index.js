@@ -8,11 +8,14 @@ import Navbar from 'components/Navbar'
 import { supabase } from "lib/supabaseClient";
 
 async function getProdutos() {
-  let { data: produto, error } = await supabase
+  let { data, error } = await supabase
   .from('produto')
-  .select('*');
-  
-  return produto;
+  .select(`nome,preco,
+  vendedor(
+    nome_vendedor
+  )`);
+
+  return data;
 }
 
 export default function Home() {

@@ -33,6 +33,12 @@ a {
   font-size: inherit;
 }
 
+.cardapio {
+  width: 85%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 250px);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
